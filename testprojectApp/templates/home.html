@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="{% static '/css/style.css' %}" />
+  </head>
+  <body>
+    <!-- Section 1: Landing Page -->
+    <section
+      class="landing text-center text-white d-flex align-items-center justify-content-center"
+    >
+      <h1>Welcome to My Website</h1>
+    </section>
+
+    <!-- Section 2: Cards -->
+    <section class="container mt-5">
+      <div class="row">
+        {% for i in range(6) %}
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Card Title {{ i+1 }}</h5>
+              <p class="card-text">This is card number {{ i+1 }}.</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- Section 3: Message Section -->
+    <section class="container mt-5">
+      <h2>Latest Message</h2>
+      {% for message in messages %}
+      <p>{{ message.content }}</p>
+      {% empty %}
+      <p>No messages available.</p>
+      {% endfor %}
+    </section>
+  </body>
+</html>
