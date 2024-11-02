@@ -290,3 +290,22 @@ pip install django
 
     - Go to `http://127.0.0.1:8000/` for home.html
     - Go to `http://127.0.0.1:8000/form` for form.html
+
+### Step 9: Deploy the project on render
+
+1. Create build.sh file
+
+    ```bash
+    #!/usr/bin/env bash
+
+    pip install -r requirements.txt
+    pip install gunicorn
+
+    # Apply migrations
+    python manage.py migrate
+    ```
+
+2. Add the domain to the ALLOWED_HOSTS in the setting.py file of the project.
+3. In the render build command write the following `./build.sh`.
+4. In the start command write the following `gunicorn main:application`.
+5. Add the enviorment variables and deploy it.
