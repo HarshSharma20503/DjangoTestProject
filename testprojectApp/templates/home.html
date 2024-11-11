@@ -12,6 +12,7 @@
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <script src="{%static 'js/script.js' %}"></script>
     <!-- Correct static usage -->
   </head>
   <body>
@@ -45,5 +46,15 @@
       <p>No messages available.</p>
       {% endfor %}
     </section>
+
+    <input type="text" id="inputText" />
+    <button onclick="showCatPhoto()">Show Cat Photo</button>
+
+    <img
+      src="{% static '/images/medium.webp' %}"
+      alt="cat with a hat"
+      id="catphoto"
+      style="display: none"
+    />
   </body>
 </html>
