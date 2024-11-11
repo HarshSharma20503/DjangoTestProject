@@ -307,5 +307,5 @@ pip install django
 
 2. Add the domain to the ALLOWED_HOSTS in the setting.py file of the project.
 3. In the render build command write the following `./build.sh`.
-4. In the start command write the following `gunicorn main:application`.
+4. In the start command write the following `gunicorn main.wsgi:application`.
 5. Add the enviorment variables and deploy it.
