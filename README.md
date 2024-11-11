@@ -309,3 +309,9 @@ pip install django
 3. In the render build command write the following `./build.sh`.
 4. In the start command write the following `gunicorn main.wsgi:application`.
 5. Add the enviorment variables and deploy it.
+6. For your static files to work in production you might need whitenoise package.
+   `pip install whitenoise` and `pip freeze > requirement.txt`. Add the following lines to the middlewares in `settings.py`.
+   ```python
+    "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
+   ``` 
